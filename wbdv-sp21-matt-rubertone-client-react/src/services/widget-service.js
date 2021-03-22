@@ -1,5 +1,5 @@
-const WIDGET_URL = "http://localhost:8080/api/widgets"
-const TOPIC_URL = "http://localhost:8080/api/topics"
+const WIDGET_URL = process.env.REACT_APP_WIDGET_URL
+const TOPIC_URL = process.env.REACT_APP_TOPICS_URL
 
 export const findAllWidgets = () =>
     fetch(WIDGET_URL)
