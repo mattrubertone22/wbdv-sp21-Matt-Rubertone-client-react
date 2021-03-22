@@ -23,7 +23,7 @@ const CourseRow = ({
     <tr>          
       <td className="text-primary">
         {!editing && <i className="fas fa-file-alt"></i>}
-        {!editing && <Link to="/editor">{course.title}</Link>}
+        {!editing && <Link to={`/courses/table/edit/${course._id}`}>{course.title}</Link>}
         {editing && (
           <input
             className="form-control"
