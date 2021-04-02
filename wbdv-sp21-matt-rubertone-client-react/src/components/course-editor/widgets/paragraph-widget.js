@@ -7,7 +7,6 @@ const ParagraphWidget = ({widget, setWidget, editing}) => {
                 editing &&
                 <textarea
                     onChange={(e) => setWidget({...widget, text: e.target.value})}
-                    value={widget.text}
                     className="form-control"/>
             }
             {
