@@ -38,6 +38,11 @@ const CourseRow = ({
       <th title="last-modified" className="d-none d-lg-table-cell">
         {course.lastModified}
       </th>
+        <th title="quizzes" className="d-none d-lg-table-cell">
+            <Link to={`/courses/${course._id}/quizzes`} className="float-left">
+                Quizzes
+            </Link>
+        </th>
       <th title="sorting" className="d-none d-lg-table-cell">
         <i className="fas fa-th"></i>
         <i className="fas fa-sort-alpha-down"></i>
