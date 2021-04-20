@@ -1,6 +1,9 @@
 import React, {useState} from "react";
+import quizApi from "../../../services/quizzes-service";
+import {useParams} from "react-router-dom";
 
 const TrueFalseQuestion = ({question}) => {
+    const {quizId} = useParams();
     const [answer, setAnswer] = useState(null);
     const [correct, setCorrect] = useState(null);
 
@@ -10,8 +13,8 @@ const TrueFalseQuestion = ({question}) => {
             return;
         }
         setCorrect(false);
-
     }
+
     return (
         <div>
             <h4>
@@ -37,9 +40,9 @@ const TrueFalseQuestion = ({question}) => {
                 name={question._id}/>False</label>
             <br/>
             <br/>
-            <button onClick={submitQuestion}>
-                Grade
-            </button>
+            {/*<button onClick={submitQuiz}>*/}
+            {/*    Grade*/}
+            {/*</button>*/}
         </div>
 
     )

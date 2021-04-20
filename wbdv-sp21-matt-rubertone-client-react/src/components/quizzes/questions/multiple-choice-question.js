@@ -4,15 +4,6 @@ const MultipleChoiceQuestion = ({question}) => {
     const [answer, setAnswer] = useState(null);
     const [correct, setCorrect] = useState(null);
 
-    const submitQuestion = () => {
-        if (answer === question.correct) {
-            setCorrect(true);
-            return;
-        }
-        setCorrect(false);
-
-    }
-
     return(
         <div>
             <h2>{question.question}
@@ -40,9 +31,6 @@ const MultipleChoiceQuestion = ({question}) => {
                 })
             }
             <br/>
-            <button onClick={submitQuestion}>
-                Grade
-            </button>
         </div>
     )
 }

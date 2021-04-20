@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import {useParams} from 'react-router-dom'
 import Question from "./questions/question";
 import questionApi from "../../services/questions-service";
+import quizApi from "../../services/quizzes-service";
 
 const Quiz = () => {
     const {courseId, quizId} = useParams();
@@ -9,6 +10,10 @@ const Quiz = () => {
     useEffect(() => {
         questionApi.findQuestionsForQuiz(quizId).then(questions => setQuestions(questions))
         },[courseId])
+
+    const submitQuiz = () => {
+        quizApi.submitQuiz(quizId, questions);
+    }
 
     return(
         <div>
@@ -22,6 +27,9 @@ const Quiz = () => {
                     )
                 }
             </ul>
+            <button onClick={submitQuiz}>
+                Submit Quiz
+            </button>
         </div>
     );
 }
